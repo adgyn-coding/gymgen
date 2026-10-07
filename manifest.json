@@ -1,0 +1,22 @@
+{
+    "name": "GymGen",
+    "short_name": "GymGen",
+    "description": "Générateur d'exercices de musculation personnalisés",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#fdfeff",
+    "theme_color": "#e3eaee",
+    "icons": [
+      {
+        "src": "Icons/Logo GymGen (192x192) (2).png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "Icons/Logo GymGen (512x512).png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

@@ -1,0 +1,457 @@
+@font-face {
+    font-family: 'LEMONMILK';
+    src: url("LEMONMILK-Regular.otf");
+}
+
+
+/*Variables pour la selection des couleures*/
+/* LIGHT */
+.theme-light {
+    --body-bg-color: linear-gradient(135deg, #f2f5f8, #dbf0ff);
+    --bg-main: #ffffff;
+    --text-main: #234567;
+    --text-in-input-select: #234567;
+    --card-bg: #f8f9fa;
+    --color-card: #234567; 
+    --input-bg: #e8f2f7b6;
+    --input-border: #aabcc8;
+    --slct-input-brdr-fcs: #419dda;
+    --button-bg: linear-gradient(160deg, #56a1d4, #2b96de);
+    --button-hover: linear-gradient(135deg, #3789c0, #1f7cba);
+    --shadow: rgba(30, 30, 31, 0.2);
+}
+
+/* DARK */
+.theme-dark {
+    --body-bg-color: linear-gradient(135deg, #464649, #232329);
+    --bg-main: #1e1e23;
+    --text-main: #f0f0f0;
+    --text-in-input-select: #d3dee8;
+    --card-bg: #27272f;
+    --color-card: #f0f0f0; 
+    --input-bg: #2c2c34;
+    --input-border: #555;
+    --slct-input-brdr-fcs: #6c6c94;
+    --button-bg: linear-gradient(160deg, hsl(240, 6%, 13%), hsl(240, 11%, 16%));
+    --button-hover: linear-gradient(135deg, hsl(240, 8%, 10%), hsl(240, 19%, 11%));
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: 'LEMONMILK', sans-serif;
+    text-align: center;
+    background: var(--body-bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    background: var(--bg-main);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: transform 0.25s;
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    color: var(--text-main);
+}
+
+select, input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1.5px solid var(--input-border);
+    color: var(--text-in-input-select);
+    outline: none;
+    font-size: 18px;
+    background: var(--input-bg);
+    transition: border 0.2s ease-in-out;
+}
+
+select:focus, input:focus {
+    border-color: var(--slct-input-brdr-fcs);
+}
+
+option {
+    font-size: 18px;
+    color: var(--text-in-input-select);
+    background-color: var(--input-bg);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    background: var(--button-bg);
+    color: hsl(216, 33%, 96%);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+button:hover {
+    background: var(--button-hover);
+    transform: translateY(-1.80px);
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+#resultat {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px;
+    background: var()var(--card-bg);
+    color: var(--color-card);
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+
+
+.input-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 10px 0 20px;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    flex: 1;
+    min-width: 30%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    color: var(--text-main);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1.5px solid (--input-border);
+    font-size: 18px;
+    background: var(--input-bg);
+    color: var(--text-in-input-select);
+}
+
+
+
+#chrono-container {
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 8px;
+    background: var(--input-bg);
+    box-shadow: 0 2px 8px var(--shadow);
+    text-align: center;
+}
+
+#chrono-container h3 {
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+#chrono {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--text-in-input-select);
+}
+
+.chrono-config {
+    margin-bottom: 10px;
+}
+
+.chrono-config input {
+    width: 80px;
+    padding: 6px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+.chrono-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.chrono-btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.chrono-btn:hover {
+    transform: scale(1.1);
+}
+
+.chrono-btn:active {
+    transform: scale(0.990);
+}
+
+
+/* Nouveaux styles pour les images des exercices */
+.exercice-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #d1d8e0; /* Ligne pointillée entre les exercices */
+}
+
+.exercice-item:last-child {
+    border-bottom: none; /* Pas de ligne pour le dernier élément */
+}
+
+.exercice-text {
+    flex-grow: 1; /* Permet au texte de prendre l'espace disponible */
+    text-align: left;
+    padding-right: 10px;
+}
+
+.exercice-images {
+    display: flex;
+    gap: 5px; /* Espace entre les deux images */
+    flex-shrink: 0; /* Empêche les images de rétrécir */
+    /* Pas besoin de overflow: hidden; si object-fit: cover; est bien utilisé sur l'image */
+    /* Supprimé width: auto; height: auto; car ils peuvent entrer en conflit avec les tailles fixes des img */
+}
+
+.exercice-img {
+    width: 60px; /* Taille fixe pour les petites images d'illustration */
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover; /* TRÈS IMPORTANT : L'image couvrira la zone, coupant les bords si nécessaire */
+    border: 1px solid #c8d4e0;
+    cursor: pointer; /* Indique que l'image est cliquable */
+    /* max-width et max-height ne sont pas strictement nécessaires ici avec object-fit: cover et des dimensions fixes */
+    transition: transform 0.3s ease-in-out; /* Ajout d'une transition pour l'effet de zoom */
+}
+
+/* Styles pour l'overlay de l'image */
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(154, 160, 162, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Assure qu'il est au-dessus de tout */
+}
+
+.overlay-image {
+    max-width: 90%; /* L'image agrandie ne dépassera pas 90% de la largeur de l'écran */
+    max-height: 90%; /* L'image agrandie ne dépassera pas 90% de la hauteur de l'écran */
+    object-fit: contain; /* TRÈS IMPORTANT : Toute l'image sera visible, ajustée aux dimensions de l'overlay */
+    border-radius: 8px; /* Bords arrondis pour l'image agrandie */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Ombre pour un meilleur effet */
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+/* Style pour la boîte de message (remplace alert) */
+.message-box {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; /* Vert pour succès */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInOut 3s forwards;
+}
+
+.message-box p {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Animation pour la boîte de message */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .exercice-item {
+        flex-direction: column; /* Empile les éléments verticalement sur petits écrans */
+        align-items: flex-start;
+    }
+
+    .exercice-text {
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .exercice-images {
+        justify-content: center; /* Centre les images en mode colonne */
+        width: 100%;
+    }
+    .exercice-img {
+        width: 80px; /* Rend les images un peu plus grandes sur mobile */
+        height: 80px;
+    }
+}
+
+
+
+.theme-selector-wrapper {
+    position: relative; /* Très important ! */
+}
+
+#theme-toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#toggleThemeBtn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#themeMenu {
+    position: absolute;
+    top: 65px; /* juste sous le bouton palette (36px de haut + marge) */
+    left: 62px; /* aligne avec le bouton (ajustable si besoin) */
+    background: var(--input-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow);
+    opacity: 0;
+    pointer-events: none;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 999;
+}
+
+
+#themeMenu ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+#themeMenu li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--text-main);
+    border-bottom: 1px solid #ccc;
+    transition: background 0.3s ease;
+}
+
+#themeMenu li:last-child {
+    border-bottom: none;
+}
+
+#themeMenu li:hover {
+    background: var(--button-hover);
+}
+
+#themeMenu .icon {
+    fill: var(--text-main);
+    width: 20px;
+    height: 20px;
+}
+
+#themeMenu.show {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.header-line {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.header-line h1 {
+    margin: 0;
+    font-size: 25px;
+    color: var(--text-main);
+    text-align: left;
+}
+
+#toggleThemeBtn {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Animation fade */
+.fade-theme {
+    animation: fadeTheme 0.5s ease;
+  }
+  
+  @keyframes fadeTheme {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
